@@ -1,11 +1,18 @@
-BubbaBlocks.addOnShotHandler(function () {
-    basic.showIcon(IconNames.Sad)
+BubbaBlocks.addOnShotHandler(function (shooter: Number) {
+    //basic.showIcon(IconNames.Sad)
+    basic.showString(shooter.toString())
+    basic.pause(2000)
 })
-BubbaBlocks.addResurrectionHandler(function () {
+BubbaBlocks.addOnResurrectionHandler(function () {
     basic.pause(1000)
     basic.showIcon(IconNames.Heart)
 })
-basic.forever(function () {
-    BubbaBlocks.detectIfShot()
-    basic.pause(1000)
+
+input.onButtonPressed(Button.A, function () {
+    BubbaBlocks.fireGun()
 })
+
+input.onButtonPressed(Button.B, function () {
+    BubbaBlocks.introduceSelf()
+})
+
