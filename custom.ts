@@ -17,7 +17,6 @@ namespace BubbaBlocks {
 
     //% block="Fire Gun"
     export function fireGun(): void {
-        basic.showIcon(IconNames.Happy)
         radio.sendString("BANG")
     }
 
@@ -43,6 +42,7 @@ namespace BubbaBlocks {
         basic.showString("I met: " + person.toString())
     }
 
+    //% block="Join Game"
     export function joinGame(): void {
         radio.onReceivedString(function (receivedString: string) {
             let sender = radio.receivedPacket(RadioPacketProperty.SerialNumber)
@@ -53,5 +53,7 @@ namespace BubbaBlocks {
                 meetPerson(sender)
             }
         })
+        radio.setTransmitSerialNumber(true)
+        introduceSelf()
     }
 }
