@@ -10,7 +10,7 @@ namespace BubbaBlocks {
         onShotCallbacks.push(onshot)
     };
 
-    //% block="On Ressurection"
+    //% block="On Resurrection"
     export function addOnResurrectionHandler(onResurrected: () => void): void {
         onResurrectionCallbacks.push(onResurrected)
     };
