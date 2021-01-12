@@ -20,12 +20,10 @@ namespace BubbaBlocks {
         radio.sendString("BANG")
     }
 
-    //% block="Introduce Self"
     export function introduceSelf(): void {
         radio.sendString("HELLO")
     }
     
-    //% block="Get Shot"
     export function getShot(shooter: Number): void {
         for (let onShotHandler of onShotCallbacks) {
             onShotHandler(shooter)
@@ -36,7 +34,6 @@ namespace BubbaBlocks {
         
     }
 
-    //% block="Meet Person"
     export function meetPerson(person: Number): void {
         knownPeople.push(person)
         basic.showString("I met: " + person.toString())
