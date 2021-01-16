@@ -58,7 +58,7 @@ namespace CardboardRobotBlocks {
     }
 
     function meetNewRobot(robot: number): void {
-        if (_knownRobots.indexOf(robot) != -1) {
+        if (_knownRobots.indexOf(robot) == -1) {
             _knownRobots.push(robot)
             for (let onMeetNewRobotHandler of _onMeetNewRobotCallbacks) {
                 onMeetNewRobotHandler(robot)
